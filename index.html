@@ -6,8 +6,9 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   </head>
   <body>
       <main>
@@ -16,11 +17,12 @@
                 <span><img src="/images/build.svg" alt="Selo Rocketseat"></span>
                   <img src="https://lorempixel.com/185/185/people/" alt="Foto pessoal">
               </div>
-            <h1>Carlos Aniel</h1>
-            <a href="https://github.com/carlos-aniel"><img src="images/github 2.svg" alt="ícone github">carlos-aniel</a>
+            <h1 id="userName">Carlos Aniel</h1>
+            <a href="https://github.com/carlos-aniel" target="_blank"><img src="images/github 2.svg" alt="ícone github">carlos-aniel</a>
             <p>An instructor focused on helping pople start programming for web</p>
-            <ul>
-                <li>
+
+            <ul id="socialLinks">
+                <li class="youtube">
                   <a href="https://youtube.com/maykbrito" target="_blank">
                     <img
                       src="images/youtube.svg"
@@ -28,7 +30,7 @@
                     />
                   </a>
                 </li>
-                <li>
+                <li class="facebook">
                   <a href="https://facebook.com/maykbrito" target="_blank">
                     <img
                       src="images/facebook.svg"
@@ -36,7 +38,7 @@
                     />
                   </a>
                 </li>
-                <li>
+                <li class="instagram">
                   <a href="https://instagram.com/maykbrito" target="_blank">
                     <img
                       src="images/instagram.svg"
@@ -44,7 +46,7 @@
                     />
                   </a>
                 </li>
-                <li>
+                <li class="twitter">
                   <a href="https://twitter.com/maykbrito" target="_blank">
                     <img
                       src="images/twitter.svg"
@@ -53,8 +55,32 @@
                   </a>
                 </li>
               </ul>
-       
           </div>
       </main>
+
+      <script>
+        const LinksSocialMedia = {
+          github: "carlos-aniel",
+          youtube: "UCxHR20PennGTfkI0szKyxqw",
+          facebook: "maykbrito",
+          instagram: "philipsvalita",
+          twitter: "manophilips332",
+        }
+
+        function changeSocialMediaLinks (){
+          for (let li of socialLinks.children) {
+            const social= li.getAttribute('class')
+
+            li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
+
+            alert(li.children[0].href)
+
+          }
+          
+        }
+
+        changeSocialMediaLinks()
+
+      </script>
   </body>
 </html>
